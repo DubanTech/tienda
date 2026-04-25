@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Conexion {
     private static Connection connection = null;
     
-    private static final String URL = "jdbc:mariadb://localhost:3306/tienda";
+    private static final String URL = "jdbc:mariadb://localhost:3306/tienda?serverTimezone=UTC";
     private static final String USER = "root";
     private static final String PASSWORD = "DubanPro123!";
 
