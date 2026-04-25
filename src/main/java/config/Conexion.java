@@ -7,18 +7,16 @@ import java.sql.SQLException;
 public class Conexion {
     private static Connection connection = null;
     
-    // Datos de MariaDB
     private static final String URL = "jdbc:mariadb://localhost:3306/tienda";
     private static final String USER = "root";
     private static final String PASSWORD = "DubanPro123!";
 
-    // Constructor privado para evitar instanciación externa
     private Conexion() {}
 
     public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
             try {
-                // Registrar el driver (opcional en versiones modernas de JDBC)
+                
                 Class.forName("org.mariadb.jdbc.Driver");
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
             } catch (ClassNotFoundException e) {
